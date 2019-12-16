@@ -9,6 +9,7 @@ n = 0
 
 def drawLine(l):
     glBegin(GL_LINE_STRIP)
+    glColor3d(0,1,0)
     glVertex2d(0, 0)
     glVertex2d(0, l)
     glEnd()
@@ -25,6 +26,7 @@ def v(k, l):
         
     if k == 0:
         v1(0)
+        glPopMatrix()
     else:
         if n < k:
             return 0
@@ -59,8 +61,6 @@ def mouse(button, state, x, y):
         n = 0
 
     display()
-    print(n)
-
 
 if __name__=="__main__":
     glutInit(sys.argv)
