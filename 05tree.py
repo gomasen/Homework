@@ -5,45 +5,36 @@ import sys
 
 THETA = 25
 R = 0.8
-n = 1
-current_stage = 0
+n = 0
+
+def drawLine(l):
+    glBegin(GL_LINE_STRIP)
+    glVertex2d(0, 0)
+    glVertex2d(0, l)
+    glEnd()
 
 def v(k, l):
-    global current_stage
-
     def v1(rotation):
-        global current_stage
-
         glPushMatrix()
-        current_stage += 1
 
         glRotated(rotation, 0.0, 0.0, 1.0)
-        glBegin(GL_LINE_STRIP)
-        glVertex2d(0, 0)
-        glVertex2d(0, l)
-        glEnd()
+        drawLine(l)
         glTranslated(0.0,l,0.0)
+        
+        v(k+1, l*R)
         
     if k == 0:
         v1(0)
     else:
-        if n < k+1:
-            if not check_drawing[k][0]:
-                v1(THETA)
-            check_drawing[k][0] = True
+        if n < k:
+            return 0
         else:
+            v1(THETA)
             glPopMatrix()
-            v1(-THETA)
-            check_drawing[k][1] = True
 
-    
-    if n > k+1:
-        v(k+1, l*0.8)
-    else:
-        for i in range(current_stage):
+            v1(-THETA)
             glPopMatrix()
     
-    current_stage = 0
 
 def resize(w, h):
     r = 5.0
@@ -65,14 +56,9 @@ def mouse(button, state, x, y):
     if button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
         n += 1
     elif button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
-        n = 1
-
-    check_drawing = []
-    for i in range(1, n):
-        check_drawing.append([False, False])
+        n = 0
 
     display()
-    
     print(n)
 
 
