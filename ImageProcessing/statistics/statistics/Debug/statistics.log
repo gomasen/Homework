@@ -1,0 +1,22 @@
+﻿2019/06/25 12:59:40 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "Z:\画像処理\statistics\statistics\statistics.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt statistics.cpp
+         statistics.cpp
+     1>z:\画像処理\statistics\statistics\statistics.cpp(81): warning C4244: 'return' : 'int' から 'float' への変換です。データが失われる可能性があります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(106): warning C4244: '+=' : 'float' から 'int' への変換です。データが失われる可能性があります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(112): warning C4244: 'return' : 'int' から 'float' への変換です。データが失われる可能性があります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(160): warning C4244: 'return' : 'int' から 'float' への変換です。データが失われる可能性があります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(172): warning C4244: 'return' : 'int' から 'float' への変換です。データが失われる可能性があります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(145): warning C4715: 'calcMinimun' : 値を返さないコントロール パスがあります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(162): warning C4715: 'calcMedian' : 値を返さないコントロール パスがあります。
+     1>z:\画像処理\statistics\statistics\statistics.cpp(152): warning C4715: 'calcMaximam' : 値を返さないコントロール パスがあります。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\画像処理\statistics\Debug\statistics.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Z:\画像処理\statistics\Debug\statistics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\画像処理\statistics\Debug\statistics.lib" /MACHINE:X86 Debug\ppmload.obj
+         Debug\statistics.obj
+         statistics.vcxproj -> Z:\画像処理\statistics\Debug\statistics.exe
+     1>プロジェクト "Z:\画像処理\statistics\statistics\statistics.vcxproj" (Build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:02.62
