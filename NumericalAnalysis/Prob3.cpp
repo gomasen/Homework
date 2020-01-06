@@ -7,11 +7,13 @@ using namespace std;
 #define K 1
 
 double f1(double x){
-    return (-0.1 * cos(x) - 0.087);
+    double a = (-0.1 * cos(x) - 0.087);
+    return a;
 }
 
 double f2(double x){
-    return (-0.1 * cos(x) - 0.087) * cos(x);
+    double a = (-0.1 * cos(x) - 0.087) * cos(x);
+    return a;
 }
 
 double* trapezoidal(double a, double b, int n){
@@ -70,15 +72,15 @@ int main(void){
     
     double *s1 = trapezoidal(a,b,n);
 
-    double I1 = -2 / M_PI * s1[0];
-    double I2 = -4 / M_PI * s1[1];
+    double I1 = -2 / M_PI * *s1;
+    double I2 = -4 / M_PI * *(s1+1);
     double tCl = (I1 + 0.5 * I2);
     
     
     double *s2 = simpson(a,b,n);
 
-    I1 = -2 / M_PI * s2[0];
-    I2 = -4 / M_PI * s2[1];
+    I1 = -2 / M_PI * *s2;
+    I2 = -4 / M_PI * *(s2+1);
     double sCl = (I1 + 0.5 * I2);
     
     printf("trape = %f : ", tCl);
