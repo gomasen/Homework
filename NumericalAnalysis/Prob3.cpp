@@ -4,11 +4,13 @@
 using namespace std;
 
 double f1(double x){
-    return (-0.1 * cos(x) - 0.087);
+    double a = (-0.1 * cos(x) - 0.087);
+    return a;
 }
 
 double f2(double x){
-    return (-0.1 * cos(x) - 0.087) * cos(x);
+    double a = (-0.1 * cos(x) - 0.087) * cos(x);
+    return a;
 }
 
 int main(void){
