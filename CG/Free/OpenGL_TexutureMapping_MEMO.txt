@@ -1,0 +1,7 @@
+http://www.oit.ac.jp/is/L231/~whashimo/Article/OpenGL/Chapter7/index.html#Section1
+
+http://see-ku.com/sklib/05.gl-texture4/index.html
+
+http://marina.sys.wakayama-u.ac.jp/~tokoi/?date=20040913
+
+http://www.opengl-tutorial.org/jp/beginners-tutorials/tutorial-5-a-textured-cube/
