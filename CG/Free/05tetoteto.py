@@ -10,7 +10,7 @@ def resize(w, h):
     glLoadIdentity()
     gluPerspective(30.0, w/h, 1.0, 100.0)
     
-    gluLookAt(0, 1, -30, 0, 0, 0, 0, 0, 1)
+    gluLookAt(0, 20, -30, 0, 0, 0, 0, 0, 1)
 
     glMatrixMode(GL_MODELVIEW)
 

@@ -2,90 +2,129 @@ from Define import *
 
 class Tetrimino:
     def __init__(self):
-        self.block_list = np.array([[[-1,-1], 10]])
+        self.i = self.I()
+        self.o = self.O()
+        self.s = self.S()
+        self.z = self.Z()
+        self.j = self.J()
+        self.l = self.L()
+        self.t = self.T()
         
+    class I:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            for i in range(4):
+                glutSolidCube(1.0)
+                glTranslated(1,0,0)
+
+    class O:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(0,0,1)
+            glutSolidCube(1.0)
+            glTranslated(-1,0,0)
+            glutSolidCube(1.0)
+
+    class S:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glTranslated(0,0,-1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(0,0,1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+
+    class Z:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(0,0,-1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+
+    class J:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glutSolidCube(1.0)
+            glTranslated(0,0,-1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+
+    class L:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glTranslated(0,0,-1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(0,0,1)
+            glutSolidCube(1.0)
+
+    class T:
+        def __init__(self):
+            self.to_center = np.array([1.5, 0])
+            self.coordinate_list = np.array([[-1,-1]])
+
+        def writeBlocks(self):
+            glTranslated(0,0,-1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,0)
+            glutSolidCube(1.0)
+            glTranslated(0,0,1)
+            glutSolidCube(1.0)
+            glTranslated(1,0,-1)
+            glutSolidCube(1.0)
+
     def createTetrimino(self, coordinate):
-        kind = random.randint(0, 6)
+        tetorimino = random.randint(0, 6)
         glPushMatrix()
         glTranslated(coordinate[0], 0, coordinate[1])
         
-        if kind == Blocks.I.value:
-            self.writeI()
-        if kind == Blocks.O.value:
-            self.writeO()
-        if kind == Blocks.S.value:
-            self.writeS()
-        if kind == Blocks.Z.value:
-            self.writeZ()
-        if kind == Blocks.J.value:
-            self.writeJ()
-        if kind == Blocks.L.value:
-            self.writeL()
-        if kind == Blocks.T.value:
-            self.writeT()
-
-        self.block_list = np.append(self.block_list, [[[coordinate[0], coordinate[1]], kind]])
+        if tetorimino == Blocks.I.value:
+            self.i.writeBlocks()
+        if tetorimino == Blocks.O.value:
+            self.o.writeBlocks()
+        if tetorimino == Blocks.S.value:
+            self.s.writeBlocks()
+        if tetorimino == Blocks.Z.value:
+            self.z.writeBlocks()
+        if tetorimino == Blocks.J.value:
+            self.j.writeBlocks()
+        if tetorimino == Blocks.L.value:
+            self.j.writeBlocks()
+        if tetorimino == Blocks.T.value:
+            self.t.writeBlocks()
         
         glPopMatrix()
-
-    def writeI(self):
-        for i in range(4):
-            glutSolidCube(1.0)
-            glTranslated(1,0,0)
-        
-    def writeO(self):
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(0,0,1)
-        glutSolidCube(1.0)
-        glTranslated(-1,0,0)
-        glutSolidCube(1.0)
-
-    def writeS(self):
-        glTranslated(0,0,-1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(0,0,1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-
-    def writeZ(self):
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(0,0,-1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-
-    def writeJ(self):
-        glutSolidCube(1.0)
-        glTranslated(0,0,-1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-
-    def writeL(self):
-        glTranslated(0,0,-1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(0,0,1)
-        glutSolidCube(1.0)
-
-    def writeT(self):
-        glTranslated(0,0,-1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,0)
-        glutSolidCube(1.0)
-        glTranslated(0,0,1)
-        glutSolidCube(1.0)
-        glTranslated(1,0,-1)
-        glutSolidCube(1.0)
