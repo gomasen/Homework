@@ -22,16 +22,18 @@ class Tetrimino:
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             for i in range(4):
                 glutSolidCube(1.0)
                 glTranslated(1,0,0)
 
     class O:
         def __init__(self):
-            self.to_center = np.array([1, 0.5])
+            self.to_center = np.array([0.5, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glutSolidCube(1.0)
             glTranslated(1,0,0)
             glutSolidCube(1.0)
@@ -42,10 +44,11 @@ class Tetrimino:
 
     class S:
         def __init__(self):
-            self.to_center = np.array([0.5, 0.5])
+            self.to_center = np.array([0.5, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glTranslated(0,0,-1)
             glutSolidCube(1.0)
             glTranslated(1,0,0)
@@ -57,10 +60,11 @@ class Tetrimino:
 
     class Z:
         def __init__(self):
-            self.to_center = np.array([1, 0.5])
+            self.to_center = np.array([1, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glutSolidCube(1.0)
             glTranslated(1,0,0)
             glutSolidCube(1.0)
@@ -71,10 +75,11 @@ class Tetrimino:
 
     class J:
         def __init__(self):
-            self.to_center = np.array([1, 0.5])
+            self.to_center = np.array([1, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glutSolidCube(1.0)
             glTranslated(0,0,-1)
             glutSolidCube(1.0)
@@ -85,10 +90,11 @@ class Tetrimino:
 
     class L:
         def __init__(self):
-            self.to_center = np.array([1, 0.5])
+            self.to_center = np.array([1, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glTranslated(0,0,-1)
             glutSolidCube(1.0)
             glTranslated(1,0,0)
@@ -100,10 +106,11 @@ class Tetrimino:
 
     class T:
         def __init__(self):
-            self.to_center = np.array([1.5, 0.5])
+            self.to_center = np.array([1, -0.5])
             self.coordinate_list = np.array([[-1,-1]])
 
         def writeBlocks(self):
+            glTranslated(-self.to_center[0],0,-self.to_center[1])
             glTranslated(0,0,-1)
             glutSolidCube(1.0)
             glTranslated(1,0,0)
@@ -135,8 +142,8 @@ class Tetrimino:
 
     def drawTetorimino(self):
         glPushMatrix()
-        glRotated(self.tetorimino_angle*(180/np.pi), 0, 1, 0)
         glTranslated(self.current_coordinate[0], 0, self.current_coordinate[1])
+        glRotated(np.rad2deg(self.tetorimino_angle), 0,1,0)
         self.current_tetorimino.writeBlocks()
         
         glPopMatrix()
@@ -146,17 +153,20 @@ class Tetrimino:
         self.drawTetorimino()
 
     def rotateTetorimino(self):
-        self.current_coordinate = self.current_coordinate + self.current_tetorimino.to_center
-        # glPushMatrix()
-    
         if self.tetorimino_angle <= 3/2 * np.pi:
             self.tetorimino_angle += np.pi/2
         else:
             self.tetorimino_angle = 0
 
-        self.current_coordinate[0] = self.current_coordinate[0] * np.cos(self.tetorimino_angle) - self.current_coordinate[1] * np.sin(self.tetorimino_angle)
-        self.current_coordinate[0] = self.current_coordinate[0] * np.sin(self.tetorimino_angle) + self.current_coordinate[1] * np.cos(self.tetorimino_angle)
+        
+        rotation_matrix = np.array([[np.cos(self.tetorimino_angle), -np.sin(self.tetorimino_angle)], \
+                                    [np.sin(self.tetorimino_angle), np.cos(self.tetorimino_angle)]])
+
+        # self.current_coordinate[0] = self.current_coordinate[0] * np.cos(self.tetorimino_angle) - self.current_coordinate[1] * np.sin(self.tetorimino_angle)
+        # self.current_coordinate[1] = self.current_coordinate[0] * np.sin(self.tetorimino_angle) + self.current_coordinate[1] * np.cos(self.tetorimino_angle)
+
+        # self.current_coordinate = self.current_coordinate
+
+        # self.current_coordinate = self.current_coordinate
    
         self.drawTetorimino()
-   
-        # glPopMatrix()

@@ -75,8 +75,10 @@ def keyboard(key, x, y):
         test.moveTetorimino(coordinate_move)
     
     elif key == ' ':
-        print("space")
         test.rotateTetorimino()
+    
+    elif key == 'q' or key == 'Q':
+        exit()
 
     
     display()
