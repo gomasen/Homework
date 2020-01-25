@@ -27,7 +27,10 @@ def display():
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     
-    test.createTetrimino(np.array([5,5], dtype=float))
+    if not test.current_tetorimino:
+        test.createTetrimino()
+    else:
+        test.drawTetorimino()
     
     glLoadIdentity()
     glLightfv(GL_LIGHT0, GL_POSITION, LIGHTPOS)
@@ -56,6 +59,29 @@ def saveGroundToList():
     
     glEndList()
 
+def keyboard(key, x, y):
+    if 100 <= key <= 103:
+        coordinate_move = np.empty(2)
+
+        if key == GLUT_KEY_LEFT:
+            coordinate_move = np.array([1,0])
+        elif key == GLUT_KEY_RIGHT:
+            coordinate_move = np.array([-1,0])
+        elif key == GLUT_KEY_UP:
+            coordinate_move = np.array([0,1])
+        elif key == GLUT_KEY_DOWN:
+            coordinate_move = np.array([0,-1])
+
+        test.moveTetorimino(coordinate_move)
+    
+    elif key == ' ':
+        print("space")
+        test.rotateTetorimino()
+
+    
+    display()
+
+
 def main():
     global test
     
@@ -66,6 +92,8 @@ def main():
     glutCreateWindow(b"GLUT prog1")
     glutDisplayFunc(display)
     glutReshapeFunc(resize)
+    glutKeyboardFunc(keyboard)
+    glutSpecialFunc(keyboard)
     init()
     saveGroundToList()
     glutMainLoop()
