@@ -1,5 +1,26 @@
 from Tetrimino import *
 
+LIGHTPOS = [3.0, 4.0, 5.0, 1.0]
+
+DIFFUSE_GROUND = [[0.6, 0.6, 0.6, 1.0], [0.3, 0.3, 0.3, 1.0]]
+RANGE_GROUND = range(-10,10)
+
+ex = 0.0
+ez = 0.0
+r = 0.0
+
+objects = None
+test = None
+
+def dropTetorimino(value):
+    global test
+
+    if test.is_tetorimino:
+        test.moveTetorimino(np.array([0, -1]))
+
+    display()
+    glutTimerFunc(1000, dropTetorimino, 0)
+
 def idle():
     glutPostRedisplay()
 
@@ -10,7 +31,7 @@ def resize(w, h):
     glLoadIdentity()
     gluPerspective(30.0, w/h, 1.0, 100.0)
     
-    gluLookAt(0, 20, -30, 0, 0, 0, 0, 0, 1)
+    gluLookAt(0, 50, 0, 0, 0, 0, 0, 0, 1)
 
     glMatrixMode(GL_MODELVIEW)
 
@@ -27,10 +48,10 @@ def display():
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     
-    if not test.current_tetorimino:
+    if not test.is_tetorimino:
         test.createTetrimino()
     else:
-        test.drawTetorimino()
+        test.drawAllTetorimino()
     
     glLoadIdentity()
     glLightfv(GL_LIGHT0, GL_POSITION, LIGHTPOS)
@@ -79,7 +100,6 @@ def keyboard(key, x, y):
     
     elif key == 'q' or key == 'Q':
         exit()
-
     
     display()
 
@@ -88,7 +108,9 @@ def main():
     global test
     
     test = Tetrimino()
-    
+
+
+    glutInitWindowSize(1000, 1000)    
     glutInit(sys.argv)
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH)
     glutCreateWindow(b"GLUT prog1")
@@ -98,6 +120,8 @@ def main():
     glutSpecialFunc(keyboard)
     init()
     saveGroundToList()
+    glutTimerFunc(1000, dropTetorimino, 0)
+
     glutMainLoop()
 
 if __name__=="__main__":
