@@ -107,8 +107,7 @@ def keyboard(key, x, y):
 def main():
     global test
     
-    test = Tetrimino()
-
+    test = Tetris()
 
     glutInitWindowSize(1000, 1000)    
     glutInit(sys.argv)
