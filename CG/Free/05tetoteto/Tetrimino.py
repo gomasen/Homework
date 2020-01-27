@@ -326,7 +326,7 @@ class Tetris:
             self.current_tetorimino.reloadCoordinateOfBlocks()
 
             for b_c_current in self.current_tetorimino.coordinate:
-                if abs(b_c_current[0]) > 5:
+                if abs(b_c_current[0]) >= 5:
                     self.current_tetorimino.center_coordinate = self.current_tetorimino.center_coordinate - move_list
                 if b_c_current[1] <= -5:
                     self.resetTetorimino(move_list)
@@ -335,7 +335,7 @@ class Tetris:
                 for tet_past in self.tetorimino_list[:-1]:
                     for block_coordinate in tet_past.coordinate:
                         if b_c_current[0] == block_coordinate[0] and block_coordinate[1] == (b_c_current[1]-1):
-                            if b_c_current[1] > 4:
+                            if b_c_current[1] >= 5:
                                 exit()
                             self.resetTetorimino(move_list)
                             return

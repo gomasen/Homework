@@ -31,7 +31,7 @@ def resize(w, h):
     glLoadIdentity()
     gluPerspective(30.0, w/h, 1.0, 100.0)
     
-    gluLookAt(10, 50, 50, 0, 0, 0, 0, 0, 1)
+    gluLookAt(0, 50, 0, 0, 0, 0, 0, 0, 1)
 
     glMatrixMode(GL_MODELVIEW)
 
@@ -109,7 +109,7 @@ def main():
     
     test = Tetris()
 
-    glutInitWindowSize(2000, 2000)    
+    glutInitWindowSize(1000, 1000)    
     glutInit(sys.argv)
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH)
     glutCreateWindow(b"GLUT prog1")
