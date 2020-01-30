@@ -3,6 +3,10 @@
 
 using namespace std;
 
+double dxdy(double x, double y){
+    return pow(x, 2) - y;
+}
+
 int main (void) {
     
     double a, b, eta;
@@ -21,11 +25,11 @@ int main (void) {
         y = eta;
 
         while (x < 2) {
-            y = y + h * (pow(x,2) - y);
+            y = y + h * dxdy(x, y);
             x += h;
         }
 
-        y = y + h * (pow(x,2) - y);
+        y = y + h * dxdy(x, y);
         cout << n << "," << x << "," << y << endl;
     }
     return 0;
