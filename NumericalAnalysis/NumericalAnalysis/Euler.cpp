@@ -3,8 +3,8 @@
 
 using namespace std;
 
-double func(double x, double y){
-    return 8;
+double dxdy(double x, double y){
+    return pow(x, 2) - y;
 }
 
 int main (void) {
@@ -15,21 +15,20 @@ int main (void) {
     b = 1;
     eta = 2;
 
-    cout << "n," << "x," << "y" << endl;
+    cout << "x," << "y" << endl;
 
-    for (int n = 1; n <= 8; n++){
-        double h = (b - a) / pow(2, n);
+    double h = 0.5;
 
-        double x, y;
-        x = a;
-        y = eta;
+    double x, y;
+    x = a;
+    y = eta;
 
-        while (x < 2) {
-            y = y + h * func(x, y);
-            x += h;
-        }
+    cout << x << "," << y << endl;
 
-        cout << n << "," << x << "," << y << endl;
+    while (x < 2) {
+        y = y + h * dxdy(x, y);
+        x += h;
+        cout << x << "," << y << endl;
     }
 
     return 0;
