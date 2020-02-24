@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2020.1.24)  30 JAN 2020 17:22
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2020.1.24)  31 JAN 2020 07:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -135,97 +135,47 @@ File: dvipdfmx.def 2017/06/24 v5.0g Graphics/color driver for dvipdfmx
 ))
 \Gin@req@height=\dimen133
 \Gin@req@width=\dimen134
-) (out/NA_prob4.aux)
-\openout1 = `NA_prob4.aux'.
+) (c:/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count104
+\lst@gtempboxa=\box46
+\lst@token=\toks21
+\lst@length=\count105
+\lst@currlwidth=\dimen135
+\lst@column=\count106
+\lst@pos=\count107
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
+\lst@newlines=\count108
+\lst@lineno=\count109
+\lst@maxwidth=\dimen138
+(c:/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count110
+\lst@skipnumbers=\count111
+\lst@framebox=\box47
+) (c:/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 15.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 15.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 15.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 15.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 15.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
-(c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
-(c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 15.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 15.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 15.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 17.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 20.
-File: 1.png Graphic file (type bmp)
-<1.png>
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 25.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 25.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 25.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 25.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 25.
-File: 2.png Graphic file (type bmp)
-<2.png>
+! LaTeX Error: File `jlisting.sty' not found.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
 
-[1
-
-]
-File: 4.png Graphic file (type bmp)
-<4.png>
-File: 5.png Graphic file (type bmp)
-<5.png>
-[2] [3] (out/NA_prob4.aux) ) 
+Enter file name: 
+c:/Users/g1530/Documents/Homework/NumericalAnalysis/NumericalAnalysis/NA_prob4.tex:10: Emergency stop.
+<read *> 
+         
+l.10 ^^M
+         
 Here is how much of TeX's memory you used:
- 1758 strings out of 492758
- 20428 string characters out of 6143214
- 91309 words of memory out of 5000000
- 6179 multiletter control sequences out of 15000+600000
- 28301 words of font info for 121 fonts, out of 8000000 for 9000
+ 2757 strings out of 492758
+ 35802 string characters out of 6143214
+ 108996 words of memory out of 5000000
+ 7231 multiletter control sequences out of 15000+600000
+ 8372 words of font info for 36 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 30i,6n,27p,340b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,0n,36p,289b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/NA_prob4.dvi (3 pages, 3804 bytes).
+No pages of output.

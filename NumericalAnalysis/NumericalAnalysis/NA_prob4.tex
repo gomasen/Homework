@@ -6,6 +6,26 @@
 % 画像
 \usepackage[dvipdfmx]{graphicx}
 
+\usepackage{listings,jlisting}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
 
 \begin{document}
 
@@ -70,5 +90,42 @@
 
   オイラー法と比べ、収束するまでの刻み幅が小さく、誤差もないものになっている。
         
+  \begin{lstlisting}[caption=Euler.cpp]
+
+    #include "iostream"
+    #include "math.h"
+    
+    using namespace std;
+    
+    double dxdy(double x, double y){
+        return pow(x, 2) - y;
+    }
+    
+    int main (void) {
+        
+        double a, b, eta;
+        int n;
+    
+        cin >> a >> b >> eta >> n;
+    
+        cout << "x," << "y" << endl;
+    
+        double h = (b - a) / pow(2, n);
+    
+        double x, y;
+        x = a;
+        y = eta;
+    
+        while (x < 2) {
+            y = y + h * dxdy(x, y);
+            x += h;
+        }
+    
+        cout << x << "," << y << endl;
+    
+        return 0;
+    }
+
+  \end{lstlisting}
 
 \end{document}

@@ -10,26 +10,24 @@ double dxdy(double x, double y){
 int main (void) {
     
     double a, b, eta;
+    int n;
 
-    a = 0;
-    b = 1;
-    eta = 2;
+    cin >> a >> b >> eta >> n;
 
     cout << "x," << "y" << endl;
 
-    double h = 0.5;
+    double h = (b - a) / pow(2, n);
 
     double x, y;
     x = a;
     y = eta;
 
-    cout << x << "," << y << endl;
-
     while (x < 2) {
         y = y + h * dxdy(x, y);
         x += h;
-        cout << x << "," << y << endl;
     }
+
+    cout << x << "," << y << endl;
 
     return 0;
 }

@@ -12,32 +12,29 @@ int main (void) {
     double a, b, y0;
     int n;
 
-    a = 0;
-    b = 1;
-    y0 = 1;
+    cin >> a >> b >> y0 >> n;
 
     cout << "n," << "x," << "y" << endl;
-    for (int n = 1; n <= 8; n++){
-        double x, y;
-        x = a;
-        y = y0;
 
-        double k1, k2, k3, k4;
+    double x, y;
+    x = a;
+    y = y0;
 
-        double h = (b-a) / pow(2,n);
+    double k1, k2, k3, k4;
 
-        while (x < b) {
-            k1 = f(x, y);
-            k2 = f((x + h / 2.0), (y + k1 * h / 2.0));
-            k3 = f((x + h / 2.0), (y + k2 * h / 2.0));
-            k4 = f((x + h), (y + k3 * h));
+    double h = (b-a) / pow(2,n);
 
-            y = y + h * (k1 + 2.0*k2 + 2.0*k3 + k4) / 6;
-            x += h;
-        }
+    while (x < b) {
+        k1 = f(x, y);
+        k2 = f((x + h / 2.0), (y + k1 * h / 2.0));
+        k3 = f((x + h / 2.0), (y + k2 * h / 2.0));
+        k4 = f((x + h), (y + k3 * h));
 
-        cout << n << "," << x << "," << y << endl;
+        y = y + h * (k1 + 2.0*k2 + 2.0*k3 + k4) / 6;
+        x += h;
     }
+
+    cout << n << "," << x << "," << y << endl;
 
     return 0;
 }
